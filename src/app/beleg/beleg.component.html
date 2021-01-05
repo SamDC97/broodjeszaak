@@ -1,0 +1,18 @@
+<div>
+  <label>Zoek beleg op ID.</label>
+  <p>
+    <input #belegById type="text">
+    <button (click)="getBelegById(belegById.value)">Zoek</button>
+  </p>
+  <p *ngIf="hasBeleg">
+    {{belegId}} - {{belegName}}, {{belegPrice}}$, {{belegDescription}}
+  </p>
+</div>
+
+<div class = "listOfBeleg">
+  <p>Lijst van de soorten beleg:</p>
+  <ul *ngFor="let beleg of allBeleg">
+    <li>{{beleg.id}} - {{beleg.name}}, {{beleg.price}}$, {{beleg.description}}</li>
+  </ul>
+</div>
+

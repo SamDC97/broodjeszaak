@@ -1,0 +1,18 @@
+<div>
+  <label>Zoek saus op ID.</label>
+  <p>
+    <input #sausById type="text">
+    <button (click)="getSausById(sausById.value)">Zoek</button>
+  </p>
+  <p *ngIf="hasSaus">
+    {{sausId}} - {{sausName}}, {{sausPrice}}$, {{sausDescription}}
+  </p>
+</div>
+
+<div class = "listOfSaus">
+  <p>Lijst van de soorten saus:</p>
+  <ul *ngFor="let saus of allSaus">
+    <li>{{saus.id}} - {{saus.name}}, {{saus.price}}$, {{saus.description}}</li>
+  </ul>
+</div>
+

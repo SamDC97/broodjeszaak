@@ -1,0 +1,18 @@
+<div>
+  <label>Zoek brood op ID.</label>
+  <p>
+    <input #broodById type="text">
+    <button (click)="getBroodById(broodById.value)">Zoek</button>
+  </p>
+  <p *ngIf="hasBrood">
+    {{broodId}} - {{broodName}}, {{broodPrice}}$, {{broodDescription}}
+  </p>
+</div>
+
+<div class = "listOfBrood">
+  <p>Lijst van de soorten brood:</p>
+  <ul *ngFor="let brood of allBrood">
+    <li>{{brood.id}} - {{brood.name}}, {{brood.price}}$, {{brood.description}}</li>
+  </ul>
+</div>
+
